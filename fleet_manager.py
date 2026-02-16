@@ -43,7 +43,7 @@ def add_member(names, ranks, divs, ids):
             print("Invalid Rank. Member not added.")
 
 def remove_member(names, ranks, divs, ids):
-    targe_id = input("Enter ID to remove: ")
+    target_id = input("Enter ID to remove: ")
     found_at = -1 
     for i in range(len(ids)):
         if ids[i] == target_id:
@@ -56,7 +56,15 @@ def remove_member(names, ranks, divs, ids):
         print("Member removed from system. ")
     else:
         print("ID not found.")
-        
+
+def update_rank(names, ranks, ids):
+    target_id = input("Enter ID to update: ")
+    for i in range(len(ids)):
+        if ids[i] == target_id:
+            new_rank = input("Enter new rank for " + names[i] + ": ")
+            ranks[i] = new_rank
+            print("Rank updated. ")
+
 
 
 
