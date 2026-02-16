@@ -52,13 +52,13 @@ def run_system_monolith():
                 print("Removed.")
             else:
                 print("Crew Member not found.")
-                
+
         elif opt == "4":
             print("Analyzing...")
             count = 0
             
             for rank in r:
-                if rank == "Captain" or "Commander": 
+                if rank == "Captain" or rank == "Commander": 
                     count = count + 1
             print("High ranking officers: " + count) 
             
