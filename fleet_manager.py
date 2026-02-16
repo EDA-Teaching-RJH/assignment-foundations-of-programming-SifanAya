@@ -22,6 +22,31 @@ def display_roster(names, ranks, divs, ids):
     print("\n--- Current Roster ---")
     for i in range (len(names)):
         print("ID: " + ids[i] + " | Name: " + names[i] + " | Rank: " + ranks[i] + " | Div: " + divs[i])
-        
+
+def add_member(names, ranks, divs, ids):
+    new_id = input("Enter New ID: ")
+    already_exists = False
+    for item in ids:
+        if item == new_id:
+          already_exists = True
+    if already_exists == True:
+        print("Error: ID already exists")
+    else:
+        new_rank = input("Enter Rank (Captain, Commander, Ensign):")
+        if new_rank == "Captain" or new_rank == "Commander" or new_rank == "Ensign":
+            ids.append(new_id)
+            ids.append(new_rank)
+            names.append(input("Enter Name: "))
+            divs.append(input("Enter Divsion "))
+            print("Crew Member added.")
+        else:
+            print("Invalid Rank. Member not added.")
+            
+
+
+
+
+
+
 
 
