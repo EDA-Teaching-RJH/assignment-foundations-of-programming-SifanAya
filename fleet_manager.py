@@ -35,14 +35,28 @@ def add_member(names, ranks, divs, ids):
         new_rank = input("Enter Rank (Captain, Commander, Ensign):")
         if new_rank == "Captain" or new_rank == "Commander" or new_rank == "Ensign":
             ids.append(new_id)
-            ids.append(new_rank)
+            ranks.append(new_rank)
             names.append(input("Enter Name: "))
             divs.append(input("Enter Divsion "))
             print("Crew Member added.")
         else:
             print("Invalid Rank. Member not added.")
-            
 
+def remove_member(names, ranks, divs, ids):
+    targe_id = input("Enter ID to remove: ")
+    found_at = -1 
+    for i in range(len(ids)):
+        if ids[i] == target_id:
+            found_at = 1 
+    if found_at != -1: 
+        names.pop(found_at)
+        ranks.pop(found_at)
+        divs.pop(found_at)
+        ids.pop(found_at)
+        print("Member removed from system. ")
+    else:
+        print("ID not found.")
+        
 
 
 
