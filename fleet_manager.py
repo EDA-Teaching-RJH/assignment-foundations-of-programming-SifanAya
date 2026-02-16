@@ -47,7 +47,7 @@ def remove_member(names, ranks, divs, ids):
     found_at = -1 
     for i in range(len(ids)):
         if ids[i] == target_id:
-            found_at = 1 
+            found_at = i 
     if found_at != -1: 
         names.pop(found_at)
         ranks.pop(found_at)
@@ -97,44 +97,36 @@ def count_officers(ranks):
             count = count + 1 
     return count
 
-def main()
-    student_name = input("Enter your name to start")
+def main():
+    student_name = input("Enter your name to start: ")
     n_list, r_list, d_list, i_list = init_database()
     active = True
     while active == True:
         display_menu(student_name)
-    choice = input("Select an option:.")
+        choice = input("Select an option: ")
     
-    if choice == "1":
-        display_roster(n_list, r_list, d_list, i_list)
-    elif choice == "2":
-        add_member(n_list, r_list, d_list, i_list)
-    elif choice == "3":
-        remove_member(n_list, r_list, d_list, i_list)
-    elif choice == "4": 
-        update_rank(n_list, r_list, i_list)
-    elif choice == "5":
-        search_crew(n_list, r_list, d_list, i_list)
-    elif choice == "6":
-        filter_by_division(n_list, d_list)
-    elif choice == "7":
-        p = calculate_payroll(r_list)
-        print("Total Payroll Credits: " + str(p))
-    elif choice == "8":
-        o = count_officers(r_list)
-        print("High Ranking Officers: " + str(o))
-    elif choice == "9":
-        print("Exiting Fleet Manager. ")
-        active = False 
-    else: 
-        print("Invalid option, try again")
+        if choice == "1":
+            display_roster(n_list, r_list, d_list, i_list)
+        elif choice == "2":
+            add_member(n_list, r_list, d_list, i_list)
+        elif choice == "3":
+            remove_member(n_list, r_list, d_list, i_list)
+        elif choice == "4": 
+            update_rank(n_list, r_list, i_list)
+        elif choice == "5":
+            search_crew(n_list, r_list, d_list, i_list)
+        elif choice == "6":
+            filter_by_division(n_list, d_list)
+        elif choice == "7":
+            p = calculate_payroll(r_list)
+            print("Total Payroll Credits: " + str(p))
+        elif choice == "8":
+            o = count_officers(r_list)
+            print("High Ranking Officers: " + str(o))
+        elif choice == "9":
+            print("Exiting Fleet Manager. ")
+            active = False 
+        else: 
+            print("Invalid option, try again")
     
 main()
-
-
-
-
-
-
-
-
