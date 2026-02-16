@@ -17,4 +17,11 @@ def display_menu(student_name):
     print("7. Calculate Payroll")
     print("8. Count Officers")
     print("9. Exit")
-    
+
+def display_roster(names, ranks, divs, ids):
+    print("\n--- Current Roster ---")
+    for i in range (len(names)):
+        print("ID: " + ids[i] + " | Name: " + names[i] + " | Rank: " + ranks[i] + " | Div: " + divs[i])
+        
+
+
