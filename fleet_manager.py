@@ -72,13 +72,23 @@ def search_crew(names, ranks, divs, ids):
         if term in names[i]:
             print("Found:" + names[i] + "| Rank:" + ranks[i] + " | Div:" + divs[i] + " | ID:" + ids[i])
 
-def filter_using_division(names, divs):
+def filter_by_division(names, divs):
     choice = input("Enter Division (Command, Operations, Sciences): ")
     print("--- Members in " + choice + " ---")
     for i in range(len(divs)):
         if divs[i] == choice: 
             print(names[i])
-            
+
+def calculate_payroll(ranks):
+    total = 0 
+    for r in ranks:
+        if r == "Captain":
+            total = total + 1000
+        elif r == "Commander":
+            total = total + 800
+        else:
+            total = total + 200
+        return total 
 
 
 
