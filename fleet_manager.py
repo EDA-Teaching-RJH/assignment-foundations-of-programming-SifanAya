@@ -71,8 +71,14 @@ def search_crew(names, ranks, divs, ids):
     for i in range(len(names)):
         if term in names[i]:
             print("Found:" + names[i] + "| Rank:" + ranks[i] + " | Div:" + divs[i] + " | ID:" + ids[i])
-            
 
+def filter_using_division(names, divs):
+    choice = input("Enter Division (Command, Operations, Sciences): ")
+    print("--- Members in " + choice + " ---")
+    for i in range(len(divs)):
+        if divs[i] == choice: 
+            print(names[i])
+            
 
 
 
