@@ -65,6 +65,14 @@ def update_rank(names, ranks, ids):
             ranks[i] = new_rank
             print("Rank updated. ")
 
+def search_crew(names, ranks, divs, ids):
+    term = input("Enter name to search: ")
+    print("\n--- Search Results ---")
+    for i in range(len(names)):
+        if term in names[i]:
+            print("Found:" + names[i] + "| Rank:" + ranks[i] + " | Div:" + divs[i] + " | ID:" + ids[i])
+            
+
 
 
 
